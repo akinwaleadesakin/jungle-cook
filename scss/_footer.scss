@@ -1,0 +1,56 @@
+@use "variables" as *;
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 25px 3%;
+  color: $dark;
+
+  a {
+    color: $dark;
+    text-decoration: none;
+    font-style: italic;
+    letter-spacing: 1px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .copyright {
+    font-style: italic;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 25px;
+
+    a {
+      font-size: 1.5rem;
+      font-style: normal;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+
+    .footer-links {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

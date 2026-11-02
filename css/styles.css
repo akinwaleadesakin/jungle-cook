@@ -1,0 +1,265 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+}
+.site-header .brand {
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+}
+.site-header .brand span {
+  background: #bfeee3;
+  border-radius: 50%;
+  padding: 5px;
+}
+.site-header .brand b {
+  background: #f6a5a3;
+  border-radius: 50%;
+  padding: 3px;
+}
+.site-header .main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.site-header .main-nav a {
+  text-decoration: none;
+  color: #34332d;
+  font-style: italic;
+}
+.site-header .main-nav a:hover {
+  text-decoration: underline;
+}
+.site-header .main-nav .nav-login {
+  background: #ffdc76;
+  padding: 10px 30px;
+  border-radius: 25px;
+  box-shadow: 0 4px #c4a64f;
+}
+.site-header .menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.home-page {
+  background: #e96756;
+}
+
+.home-hero {
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(233, 103, 86, 0.55), rgba(233, 103, 86, 0.55)), radial-gradient(circle at 30% 40%, #f4b28d, #d75c4b 70%);
+}
+
+.welcome-card {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #ffdc76;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  z-index: 1;
+}
+.welcome-card h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.welcome-card p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.welcome-card .pill-button {
+  background: #fff9e9;
+}
+
+.welcome-note {
+  position: absolute;
+  right: 12%;
+  top: 20%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f5b5ad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+}
+.welcome-note a {
+  text-decoration: underline;
+}
+
+.login-page {
+  background: #ffdc76;
+}
+
+.auth-layout {
+  max-width: 1100px;
+  min-height: 550px;
+  margin: auto;
+  padding: 50px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12%;
+  align-items: center;
+}
+
+.auth-panel h1,
+.auth-panel h2 {
+  font-size: 27px;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+.auth-panel h1 {
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.auth-form label {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.auth-form input {
+  border: none;
+  border-bottom: 1px solid #34332d;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 15px;
+  outline: none;
+}
+.auth-form input:focus {
+  border-bottom: 2px solid #34332d;
+}
+.auth-form button {
+  align-self: center;
+  margin-top: 25px;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  font-size: 11px;
+  font-style: italic;
+}
+.site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #34332d;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pill-button {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  background: #ffdc76;
+  color: #34332d;
+  border-radius: 25px;
+  padding: 12px 35px;
+  font-size: 14px;
+  font-style: italic;
+  box-shadow: 0 5px #c4a64f;
+}
+
+@media (max-width: 1020px) {
+  .auth-layout {
+    gap: 8%;
+    padding: 40px 6%;
+  }
+  .welcome-note {
+    right: 7%;
+  }
+}
+@media (max-width: 760px) {
+  .site-header {
+    padding: 15px 20px;
+  }
+  .site-header .menu-toggle {
+    display: block;
+  }
+  .site-header .main-nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #ffdc76;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    z-index: 10;
+  }
+  .site-header .main-nav.open {
+    display: flex;
+  }
+  .home-hero {
+    min-height: 600px;
+  }
+  .welcome-card {
+    width: 270px;
+    height: 270px;
+  }
+  .welcome-note {
+    right: 5%;
+    top: 5%;
+    width: 110px;
+    height: 110px;
+    font-size: 9px;
+    padding: 12px;
+  }
+  .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 40px 9%;
+  }
+  .auth-panel {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+  }
+  .site-footer {
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+  .site-footer .footer-links {
+    justify-content: center;
+  }
+}

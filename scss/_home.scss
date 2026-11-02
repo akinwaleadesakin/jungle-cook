@@ -1,0 +1,93 @@
+@use "variables" as *;
+
+.home-page {
+  min-height: 100vh;
+  background: url("../images/food-background.jpg") center center / cover no-repeat;
+}
+
+.page-overlay {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(230, 77, 61, 0.45);
+}
+
+.home-hero {
+  position: relative;
+  flex: 1;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.welcome-circle {
+  position: relative;
+  z-index: 2;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background: $yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 55px;
+
+  h1 {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  p {
+    max-width: 220px;
+    line-height: 1.4;
+  }
+}
+
+.pink-circle {
+  position: absolute;
+  z-index: 3;
+  top: 15%;
+  left: calc(50% + 95px);
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background: $pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+
+  p {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: $mobile) {
+  .home-hero {
+    min-height: 550px;
+  }
+
+  .welcome-circle {
+    width: 290px;
+    height: 290px;
+    padding: 35px;
+  }
+
+  .pink-circle {
+    width: 125px;
+    height: 125px;
+    padding: 18px;
+    top: 5%;
+    left: auto;
+    right: 5%;
+  }
+}

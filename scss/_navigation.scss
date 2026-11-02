@@ -1,0 +1,99 @@
+@use "variables" as *;
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 4%;
+  color: $dark;
+
+  .brand {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: 3px;
+    color: $dark;
+    text-decoration: none;
+  }
+
+  .brand-decoration {
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    left: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background: $mint;
+    opacity: 0.9;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    a {
+      color: $dark;
+      font-size: 1.3rem;
+      font-style: italic;
+      letter-spacing: 2px;
+      text-decoration: none;
+
+      &:hover,
+      &.active {
+        border-bottom: 3px solid $dark;
+      }
+    }
+
+    .login-link {
+      min-width: 165px;
+      padding: 15px 35px;
+      text-align: center;
+      border-radius: 40px;
+      background-color: $yellow;
+      border-bottom: none;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $mobile) {
+  .site-header {
+    padding: 25px;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 85px;
+      right: 20px;
+      z-index: 10;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+      padding: 25px;
+      background: $yellow;
+      border-radius: 15px;
+
+      &.open {
+        display: flex;
+      }
+
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}

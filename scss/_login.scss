@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+.login-page {
+    background: $yellow;
+}
+
+.auth-layout {
+    max-width: 1100px;
+    min-height: 550px;
+
+    margin: auto;
+    padding: 50px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12%;
+
+    align-items: center;
+}
+
+.auth-panel {
+    h1,
+    h2 {
+        font-size: 27px;
+        font-weight: normal;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    label {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid $dark;
+        background: transparent;
+
+        padding: 10px 0;
+        font-size: 15px;
+        outline: none;
+
+        &:focus {
+            border-bottom: 2px solid $dark;
+        }
+    }
+
+    button {
+        align-self: center;
+        margin-top: 25px;
+    }
+}
