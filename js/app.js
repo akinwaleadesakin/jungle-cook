@@ -265,7 +265,7 @@ onAuthStateChanged(auth, (user) => {
     });
 
 
-    // Remove previous greeting
+   
     const oldGreeting =
         document.querySelector("#user-greeting");
 
@@ -276,7 +276,7 @@ onAuthStateChanged(auth, (user) => {
     }
 
 
-    // Display logged-in user's name
+    
     if (user && navigation) {
 
         const greeting = document.createElement("span");
@@ -288,7 +288,7 @@ onAuthStateChanged(auth, (user) => {
         greeting.textContent =
             `Welcome, ${user.displayName || user.email}!`;
 
-        // Insert greeting before logout
+        
         const loginLink =
             navigation.querySelector("[data-auth-link]");
 
