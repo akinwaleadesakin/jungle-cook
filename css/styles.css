@@ -263,3 +263,42 @@ a {
     justify-content: center;
   }
 }
+/* Firebase authentication messages */
+
+.form-message {
+    min-height: 18px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.form-message.error {
+    color: #b3261e;
+}
+
+/* Logged-in navigation */
+
+.user-greeting {
+    font-size: 12px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+/* Logout button */
+
+.nav-login.nav-logout {
+    background: #f6a5a3;
+    border-radius: 24px;
+    padding: 10px 30px;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 760px) {
+
+    .user-greeting {
+        text-align: center;
+        padding: 10px;
+    }
+
+}

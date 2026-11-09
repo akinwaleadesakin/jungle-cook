@@ -1,74 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Jungle Cook</title>
-
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="app.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Jungle Cook | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/app.js"></script>
 </head>
 
 <body class="home-page">
-  <div class="page-overlay">
 
-    <header class="site-header">
-      <a href="index.html" class="brand">
-        <span class="brand-decoration"></span>
-        The Jungle Cook
-      </a>
+<header class="site-header">
+    <a class="brand" href="index.html">
+        <span>The</span> Jungle <b>Cook</b>
+    </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
+    <button class="menu-toggle" aria-label="Open navigation"
+        aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-      <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
+    <nav id="main-nav" class="main-nav">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="#browse">Browse</a>
         <a href="#create">Create Recipe</a>
-        <a href="login.html" class="login-link">Login</a>
-      </nav>
-    </header>
+        <a href="login.html" class="nav-login" data-auth-link>Login</a>
+    </nav>
+</header>
 
-    <main class="home-hero">
+<main class="home-hero">
 
-      <div class="pink-circle">
-        <p>
-          Want to be a Jungle Cook?
-          Go ahead and the kitchen is yours!
-        </p>
-      </div>
-
-      <section class="welcome-circle">
+    <div class="welcome-card">
+        <small>Welcome to</small>
         <h1>The Jungle Cook</h1>
+        <p>Recipes for everyone.<br>Made to be shared.</p>
+        <a class="pill-button" href="#browse">Explore Recipes</a>
+    </div>
 
-        <p>
-          The home to various recipes of your choice.
-          Add your own recipe today and fill the world with joy!
-        </p>
-      </section>
+    <aside class="welcome-note">
+        <p>Want to be a Jungle Cook?</p>
+        <p> Go ahead and the kitchen is yours!</p>
+        
+    </aside>
 
-    </main>
+</main>
 
-    <footer class="site-footer">
-      <p class="copyright">
-        &copy; 2026 Jungle Cook.       
-      </p>
+<footer class="site-footer">
+    <span>Copyright © 2019 The Jungle Cook</span>
 
-      <nav class="footer-links">
-        <a href="login.html">Login</a>
+    <div class="footer-links">
+        <a href="login.html" data-auth-link>Login</a>
         <a href="#browse">Recipes by Category</a>
         <a href="#privacy">Privacy and Copyright</a>
         <a href="#create">Create Recipe</a>
-        <a href="#your-recipes">Your Recipes</a>
-      </nav>
+        <a href="#recipes">Your Recipes</a>
+    </div>
+</footer>
 
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◎</a>
-      </div>
-    </footer>
-
-  </div>
 </body>
 </html>
