@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Jungle Cook | Edit Recipe</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/edit-recipe.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/edit-recipe.js"></script>
+</head>
+
+<body class="edit-recipe-page">
+
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            <span class="brand-the">The</span>
+            <span class="brand-jungle">Jungle</span>
+            <span class="brand-cook">Cook</span>
+        </a>
+
+        <button class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="main-nav">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="create-recipe.html">Create Recipe</a>
+            <a href="your-recipes.html">Your Recipes</a>
+            <a href="login.html" data-auth-link>Login</a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="edit-main">
+
+        <section class="edit-heading">
+
+            <h1>Edit Recipe:</h1>
+
+            <p>Make changes to your delicious recipe!</p>
+
+        </section>
+
+
+        <div id="edit-message" role="status" aria-live="polite">
+            Loading recipe...
+        </div>
+
+
+        <form id="edit-recipe-form" hidden>
+
+            <div class="edit-field">
+
+                <label for="recipe-name">Recipe Name</label>
+
+                <input
+                    type="text"
+                    id="recipe-name"
+                    name="recipeName"
+                    maxlength="100"
+                    required>
+
+            </div>
+
+
+            <div class="edit-field">
+
+                <label for="recipe-description">Description</label>
+
+                <textarea
+                    id="recipe-description"
+                    name="recipeDescription"
+                    maxlength="500"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="edit-row">
+
+                <div class="edit-field">
+
+                    <label for="recipe-time">Total Time</label>
+
+                    <input
+                        type="text"
+                        id="recipe-time"
+                        name="recipeTime"
+                        required>
+
+                </div>
+
+
+                <div class="edit-field">
+
+                    <label for="recipe-servings">Serving Size</label>
+
+                    <input
+                        type="number"
+                        id="recipe-servings"
+                        name="recipeServings"
+                        min="1"
+                        max="100"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="edit-field">
+
+                <label>Current Recipe Image</label>
+
+                <img
+                    id="current-recipe-image"
+                    class="current-recipe-image"
+                    alt="Current recipe">
+
+                <p>
+                    Image replacement will be added when an image-hosting
+                    service is configured.
+                </p>
+
+            </div>
+
+
+            <div class="edit-field">
+
+                <label>Ingredients</label>
+
+                <div id="ingredients-container"></div>
+
+                <button
+                    type="button"
+                    id="add-ingredient"
+                    class="add-button">
+                    + Add Ingredient
+                </button>
+
+            </div>
+
+
+            <div class="edit-field">
+
+                <label>Instructions</label>
+
+                <div id="instructions-container"></div>
+
+                <button
+                    type="button"
+                    id="add-instruction"
+                    class="add-button">
+                    + Add Instruction
+                </button>
+
+            </div>
+
+
+            <div class="edit-actions">
+
+                <button
+                    type="submit"
+                    id="save-changes"
+                    class="save-button">
+                    Save Changes
+                </button>
+
+                <a href="your-recipes.html" class="cancel-button">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>Copyright © 2019 The Jungle Cook</p>
+
+        <nav class="footer-links">
+            <a href="login.html" data-auth-link>Login</a>
+            <a href="browse.html">Browse</a>
+            <a href="create-recipe.html">Create Recipe</a>
+            <a href="your-recipes.html">Your Recipes</a>
+        </nav>
+
+    </footer>
+
+</body>
+</html>

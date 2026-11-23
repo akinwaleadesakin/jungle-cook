@@ -10,12 +10,24 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
+import {
+    getFirestore
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+import {
+    getStorage
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js";
+
 import { firebaseConfig } from "./firebase-config.js";
 
 
 
+
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 
 
@@ -120,7 +132,6 @@ if (signupForm) {
 
         try {
 
-            
             const userCredential =
                 await createUserWithEmailAndPassword(
                     auth,
@@ -128,22 +139,15 @@ if (signupForm) {
                     password
                 );
 
-            
             await updateProfile(userCredential.user, {
-
                 displayName: `${firstName} ${lastName}`
-
             });
-
-            
-            await userCredential.user.reload();
 
             showMessage(
                 "signup-message",
-                `Welcome, ${firstName} ${lastName}! Your account was created successfully.`
+                `Welcome, ${firstName}! Your account was created successfully.`
             );
 
-            
             window.location.href = "index.html";
 
         } catch (error) {
@@ -159,6 +163,7 @@ if (signupForm) {
     });
 
 }
+
 
 
 
@@ -178,7 +183,6 @@ if (loginForm) {
 
         try {
 
-            
             const userCredential =
                 await signInWithEmailAndPassword(
                     auth,
@@ -186,21 +190,13 @@ if (loginForm) {
                     password
                 );
 
-            
-            await userCredential.user.reload();
-
-            
-            const user = auth.currentUser;
-
-           
-            const name = user.displayName || user.email;
+            const user = userCredential.user;
 
             showMessage(
                 "login-message",
-                `Welcome back, ${name}!`
+                `Welcome back, ${user.displayName || user.email}!`
             );
 
-           
             window.location.href = "index.html";
 
         } catch (error) {
@@ -225,13 +221,11 @@ onAuthStateChanged(auth, (user) => {
     const authLinks =
         document.querySelectorAll("[data-auth-link]");
 
-    
     authLinks.forEach(link => {
 
         if (user) {
 
             link.textContent = "Logout";
-
             link.href = "#logout";
 
             link.onclick = async (event) => {
@@ -255,9 +249,7 @@ onAuthStateChanged(auth, (user) => {
         } else {
 
             link.textContent = "Login";
-
             link.href = "login.html";
-
             link.onclick = null;
 
         }
@@ -265,37 +257,29 @@ onAuthStateChanged(auth, (user) => {
     });
 
 
-   
     const oldGreeting =
         document.querySelector("#user-greeting");
 
     if (oldGreeting) {
-
         oldGreeting.remove();
-
     }
 
 
-    
     if (user && navigation) {
 
         const greeting = document.createElement("span");
 
         greeting.id = "user-greeting";
-
         greeting.className = "user-greeting";
 
         greeting.textContent =
             `Welcome, ${user.displayName || user.email}!`;
 
-        
         const loginLink =
             navigation.querySelector("[data-auth-link]");
 
         if (loginLink) {
-
             navigation.insertBefore(greeting, loginLink);
-
         }
 
     }

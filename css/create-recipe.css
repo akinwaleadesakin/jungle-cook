@@ -1,0 +1,468 @@
+
+
+
+.create-recipe-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    color: #222222;
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+
+
+
+.create-recipe-page .site-header {
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+}
+
+.create-recipe-page .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222222;
+    font-size: 24px;
+    font-weight: 800;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.create-recipe-page .brand-the {
+    background: #b8e9d2;
+    padding: 5px 9px;
+    border-radius: 50%;
+}
+
+.create-recipe-page .brand-jungle {
+    margin-left: 4px;
+}
+
+.create-recipe-page .brand-cook {
+    background: #f3a3a7;
+    padding: 5px 9px;
+    border-radius: 50%;
+}
+
+.create-recipe-page .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.create-recipe-page .main-nav a {
+    color: #222222;
+    text-decoration: none;
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.create-recipe-page .main-nav a:hover,
+.create-recipe-page .main-nav a.active {
+    border-bottom: 2px solid #222222;
+}
+
+.create-recipe-page .main-nav a[data-auth-link] {
+    background: #ffdf7e;
+    border-radius: 25px;
+    padding: 10px 28px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+}
+
+.create-recipe-page .menu-toggle {
+    display: none;
+}
+
+
+
+
+.create-recipe-main {
+    width: 77%;
+    max-width: 1150px;
+    margin: 20px auto 60px;
+    flex: 1;
+}
+
+.create-recipe-main h1 {
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+
+
+
+#create-recipe-form {
+    width: 100%;
+}
+
+.image-upload {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #444444;
+    padding: 8px 0;
+    position: relative;
+}
+
+.image-upload > label:first-child {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.image-upload input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.attach-button {
+    background: #efa2a7;
+    border-radius: 20px;
+    padding: 7px 18px;
+    font-family: "Caveat", cursive;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.attach-button:hover {
+    background: #e98c94;
+}
+
+#image-file-name {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #666666;
+}
+
+
+
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 35px;
+}
+
+.form-fields input,
+.form-fields textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #444444;
+    border-radius: 0;
+    outline: none;
+    padding: 12px 0;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 13px;
+    background: transparent;
+    color: #222222;
+}
+
+.form-fields textarea {
+    min-height: 45px;
+    resize: vertical;
+}
+
+.form-fields input:focus,
+.form-fields textarea:focus {
+    border-bottom-color: #efa2a7;
+}
+
+.form-fields input::placeholder,
+.form-fields textarea::placeholder {
+    color: #555555;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+
+
+
+.dynamic-section {
+    margin-top: 65px;
+    position: relative;
+}
+
+.dynamic-section h2 {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+#ingredients-container,
+#instructions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.dynamic-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #444444;
+    border-radius: 0;
+    outline: none;
+    padding: 10px 0;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 13px;
+    background: transparent;
+    color: #222222;
+}
+
+.dynamic-input:focus {
+    border-bottom-color: #efa2a7;
+}
+
+.dynamic-input::placeholder {
+    color: #555555;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.instruction-input {
+    min-height: 35px;
+    resize: vertical;
+}
+
+
+
+
+.add-button {
+    display: block;
+    margin: 10px 0 0 auto;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background: #efa2a7;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.add-button:hover {
+    background: #e88991;
+}
+
+
+
+
+.recipe-message {
+    min-height: 22px;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: #237a43;
+}
+
+.recipe-message.error {
+    color: #b42318;
+}
+
+
+
+
+.create-submit {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    margin: 35px auto 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #efa2a7;
+    color: #222222;
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.17);
+}
+
+.create-submit:hover {
+    background: #e88991;
+}
+
+.create-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+
+
+.create-recipe-page .site-footer {
+    width: 100%;
+    min-height: 75px;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+}
+
+.create-recipe-page .copyright {
+    font-family: "Caveat", cursive;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.create-recipe-page .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.create-recipe-page .footer-links a,
+.create-recipe-page .social-links a {
+    color: #222222;
+    text-decoration: none;
+    font-family: "Caveat", cursive;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.create-recipe-page .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.create-recipe-page .social-links {
+    display: flex;
+    gap: 14px;
+    font-size: 20px;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .create-recipe-main {
+        width: 85%;
+    }
+
+    .create-recipe-page .main-nav {
+        gap: 17px;
+    }
+
+    .create-recipe-page .main-nav a {
+        font-size: 19px;
+    }
+
+    .create-recipe-page .site-footer {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
+@media (max-width: 760px) {
+
+    .create-recipe-page .site-header {
+        min-height: 75px;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+    }
+
+    .create-recipe-page .brand {
+        font-size: 20px;
+    }
+
+    .create-recipe-page .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .create-recipe-page .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #222222;
+        border-radius: 3px;
+    }
+
+    .create-recipe-page .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .create-recipe-page .main-nav.open {
+        display: flex;
+    }
+
+    .create-recipe-main {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+    .create-recipe-main h1 {
+        font-size: 23px;
+    }
+
+    .form-fields {
+        gap: 22px;
+    }
+
+    .dynamic-section {
+        margin-top: 45px;
+    }
+
+    .create-recipe-page .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 5%;
+    }
+
+    .create-recipe-page .footer-links {
+        gap: 12px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .create-recipe-main {
+        width: 90%;
+    }
+
+    .create-submit {
+        width: 100%;
+    }
+
+    .create-recipe-page .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

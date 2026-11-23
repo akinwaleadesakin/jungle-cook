@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Jungle Cook | Create Recipe</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/create-recipe.css">
+
+    
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/create-recipe.js"></script>
+</head>
+
+<body class="create-recipe-page">
+
+    
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            <span class="brand-the">The</span>
+            <span class="brand-jungle">Jungle</span>
+            <span class="brand-cook">Cook</span>
+        </a>
+
+        <button class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="main-nav">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+
+            <a href="index.html">Home</a>
+
+            <a href="browse.html">Browse</a>
+
+            <a href="create-recipe.html" class="active">
+                Create Recipe
+            </a>
+
+            <a href="your-recipes.html">
+                Your Recipes
+            </a>
+
+            <a href="login.html" data-auth-link>
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    
+    <main class="create-recipe-main">
+
+        <h1 id="recipe-greeting">
+            Hey, create your recipe!
+        </h1>
+
+        <form id="create-recipe-form">
+
+           
+
+            <div class="image-upload">
+
+                <label for="recipe-image">
+                    Add Recipe Image
+                </label>
+
+                <label for="recipe-image" class="attach-button">
+                    Attach File
+                </label>
+
+                <input
+                    type="file"
+                    id="recipe-image"
+                    name="recipeImage"
+                    accept="image/jpeg,image/png,image/webp"
+                    required
+                >
+
+            </div>
+
+            <p id="image-file-name">
+                No image selected
+            </p>
+
+
+            <!-- RECIPE DETAILS -->
+
+            <div class="form-fields">
+
+                <input
+                    type="text"
+                    id="recipe-name"
+                    name="recipeName"
+                    placeholder="Recipe Name"
+                    maxlength="100"
+                    required
+                >
+
+                <textarea
+                    id="recipe-description"
+                    name="recipeDescription"
+                    placeholder="Recipe Description"
+                    maxlength="1000"
+                    required
+                ></textarea>
+
+                <input
+                    type="text"
+                    id="recipe-time"
+                    name="recipeTime"
+                    placeholder="Recipe Total Time"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="recipe-servings"
+                    name="recipeServings"
+                    placeholder="Recipe Serving Size"
+                    min="1"
+                    max="100"
+                    required
+                >
+
+            </div>
+
+
+            
+
+            <section class="dynamic-section">
+
+                <h2>Enter Ingredients:</h2>
+
+                <div id="ingredients-container">
+
+                    <input
+                        type="text"
+                        class="dynamic-input ingredient-input"
+                        placeholder="Ingredient #1"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        class="dynamic-input ingredient-input"
+                        placeholder="Ingredient #2"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        class="dynamic-input ingredient-input"
+                        placeholder="Ingredient #3"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="button"
+                    id="add-ingredient"
+                    class="add-button"
+                    aria-label="Add ingredient">
+
+                    +
+
+                </button>
+
+            </section>
+
+
+            
+
+            <section class="dynamic-section">
+
+                <h2>Enter Instructions:</h2>
+
+                <div id="instructions-container">
+
+                    <textarea
+                        class="dynamic-input instruction-input"
+                        placeholder="Instruction #1"
+                        required
+                    ></textarea>
+
+                    <textarea
+                        class="dynamic-input instruction-input"
+                        placeholder="Instruction #2"
+                        required
+                    ></textarea>
+
+                    <textarea
+                        class="dynamic-input instruction-input"
+                        placeholder="Instruction #3"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="add-instruction"
+                    class="add-button"
+                    aria-label="Add instruction">
+
+                    +
+
+                </button>
+
+            </section>
+
+
+          
+
+            <p
+                id="recipe-message"
+                class="recipe-message"
+                role="status"
+                aria-live="polite">
+            </p>
+
+
+            
+
+            <button
+                type="submit"
+                id="create-submit"
+                class="create-submit">
+
+                Create Recipe
+
+            </button>
+
+        </form>
+
+    </main>
+
+
+    
+
+    <footer class="site-footer">
+
+        <p class="copyright">
+            Copyright © 2019 The Jungle Cook
+        </p>
+
+        <nav class="footer-links">
+
+            <a href="login.html" data-auth-link>Login</a>
+
+            <a href="browse.html">Recipes by Category</a>
+
+            <a href="#privacy">Privacy and Copyright</a>
+
+            <a href="create-recipe.html">Create Recipe</a>
+
+            <a href="your-recipes.html">Your Recipes</a>
+
+        </nav>
+
+        <div class="social-links">
+
+            <a href="#" aria-label="Facebook">f</a>
+
+            <a href="#" aria-label="Instagram">◎</a>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,99 +1,158 @@
+
 @use "variables" as *;
 
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px 4%;
-  color: $dark;
+    width: 100%;
+    min-height: 100px;
 
-  .brand {
-    position: relative;
-    z-index: 2;
-    font-size: 1.5rem;
-    font-style: italic;
-    letter-spacing: 3px;
-    color: $dark;
-    text-decoration: none;
-  }
-
-  .brand-decoration {
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    left: 10px;
-    width: 100px;
-    height: 50px;
-    border-radius: 50%;
-    background: $mint;
-    opacity: 0.9;
-  }
-
-  .main-nav {
     display: flex;
     align-items: center;
-    gap: 35px;
+    justify-content: space-between;
 
-    a {
-      color: $dark;
-      font-size: 1.3rem;
-      font-style: italic;
-      letter-spacing: 2px;
-      text-decoration: none;
+    padding: 25px 4%;
 
-      &:hover,
-      &.active {
-        border-bottom: 3px solid $dark;
-      }
+    position: relative;
+    z-index: 10;
+
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+
+    .brand-the {
+        background-color: #B7EBD7;
+        padding: 5px 9px;
+        border-radius: 50%;
+        margin-right: 5px;
     }
 
-    .login-link {
-      min-width: 165px;
-      padding: 15px 35px;
-      text-align: center;
-      border-radius: 40px;
-      background-color: $yellow;
-      border-bottom: none;
+    .brand-jungle {
+        margin-right: 5px;
     }
-  }
 
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+    .brand-cook {
+        background-color: #F5A6A5;
+        padding: 5px 9px;
+        border-radius: 50%;
+    }
 }
 
-@media (max-width: $mobile) {
-  .site-header {
-    padding: 25px;
-
-    .menu-toggle {
-      display: block;
-    }
 
     .main-nav {
-      display: none;
-      position: absolute;
-      top: 85px;
-      right: 20px;
-      z-index: 10;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 20px;
-      padding: 25px;
-      background: $yellow;
-      border-radius: 15px;
-
-      &.open {
         display: flex;
-      }
+        align-items: center;
+        gap: 34px;
 
-      a {
-        font-size: 1rem;
-      }
+        a {
+            text-decoration: none;
+            color: $dark;
+
+            font-family: $font-handwriting;
+            font-size: 27px;
+            font-weight: 600;
+
+            padding-bottom: 5px;
+
+            &:hover,
+            &.active {
+                border-bottom: 3px solid $dark;
+            }
+        }
+
+        .nav-login {
+            min-width: 125px;
+
+            padding: 10px 30px;
+
+            border-radius: 40px;
+            background: $yellow;
+
+            text-align: center;
+            border-bottom: none;
+
+            &:hover {
+                background: darken($yellow, 5%);
+                border-bottom: none;
+            }
+        }
     }
-  }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: $tablet) {
+
+    .site-header {
+        padding: 25px 3%;
+
+        .main-nav {
+            gap: 22px;
+
+            a {
+                font-size: 23px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: $mobile) {
+
+    .site-header {
+        padding: 20px 6%;
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 27px;
+                height: 3px;
+                background: $dark;
+            }
+        }
+
+        .main-nav {
+            display: none;
+
+            position: absolute;
+            top: 85px;
+            right: 20px;
+
+            flex-direction: column;
+            align-items: stretch;
+
+            gap: 18px;
+            padding: 25px;
+
+            background: $yellow;
+            border-radius: 15px;
+
+            &.open {
+                display: flex;
+            }
+
+            a {
+                font-size: 22px;
+            }
+        }
+    }
 }

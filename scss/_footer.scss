@@ -1,56 +1,98 @@
+
 @use "variables" as *;
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding: 25px 3%;
-  color: $dark;
+    width: 100%;
 
-  a {
-    color: $dark;
-    text-decoration: none;
-    font-style: italic;
-    letter-spacing: 1px;
+    min-height: 65px;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .copyright {
-    font-style: italic;
-    letter-spacing: 1px;
-    white-space: nowrap;
-  }
-
-  .footer-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 3%;
+
     gap: 20px;
-  }
 
-  .social-links {
-    display: flex;
-    gap: 25px;
+    color: $dark;
 
-    a {
-      font-size: 1.5rem;
-      font-style: normal;
+    font-family: $font-handwriting;
+    font-weight: 600;
+
+    .copyright {
+        white-space: nowrap;
+        font-size: 16px;
     }
-  }
-}
-
-@media (max-width: $mobile) {
-  .site-footer {
-    flex-direction: column;
-    text-align: center;
 
     .footer-links {
-      flex-direction: column;
-      gap: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 22px;
+
+        a {
+            color: $dark;
+            text-decoration: none;
+
+            font-size: 17px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
-  }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        a {
+            color: $dark;
+            text-decoration: none;
+            font-size: 23px;
+        }
+    }
+
+    .facebook-icon {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    .instagram-icon {
+        font-family: Arial, sans-serif;
+    }
+}
+
+
+
+@media (max-width: $tablet) {
+
+    .site-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .footer-links {
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+
+
+@media (max-width: $mobile) {
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+
+        .footer-links {
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
 }
