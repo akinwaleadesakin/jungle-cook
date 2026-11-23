@@ -8,20 +8,20 @@ tools for creating and managing your own recipes.
 
 ### Home
 
-The [home page](/index.html) introduces the website and contains links to the
+The [home page](index.html) introduces the website and contains links to the
 main Browse and Create Recipe pages. The navigation changes for signed-in users:
 "Login" becomes "Logout" and the header shows the user's name or email address.
 
 ### Browse recipes
 
-The [Browse page](/browse.html) fetches the sample catalog from
-[data/recipes.json](/data/recipes.json). JavaScript creates a card for every
+The [Browse page](browse.html) fetches the sample catalog from
+[data/recipes.json](data/recipes.json). JavaScript creates a card for every
 recipe and displays its image, description, cooking time, and serving count.
 Loading and image errors are shown with an accessible status message.
 
 ### Accounts
 
-The [Login page](/login.html) supports both:
+The [Login page](login.html) supports both:
 
 - Signing in with an existing email and password
 - Signing up with a first name, last name, email, and password
@@ -32,13 +32,13 @@ show success or user-friendly error messages for common Firebase errors.
 
 ### Create a recipe
 
-The [Create Recipe page](/create-recipe.html) is available to signed-out
+The [Create Recipe page](create-recipe.html) is available to signed-out
 visitors, but its form is disabled until the user logs in. A signed-in user can:
 
 1. Attach one JPG, PNG, or WEBP image (up to 5 MB).
 2. Enter a name, description, total time, and serving size.
-3. Add or remove dynamic ingredient fields.
-4. Add or remove dynamic instruction fields.
+3. Add additional dynamic ingredient fields.
+4. Add additional dynamic instruction fields.
 5. Upload the image to Firebase Storage and save the recipe to Firestore.
 
 The browser validates required fields and allowed image types. The page reports
@@ -46,14 +46,14 @@ image-upload and save progress while the recipe is being created.
 
 ### Your recipes
 
-The [Your Recipes page](/your-recipes.html) queries Firestore for recipes whose
+The [Your Recipes page](your-recipes.html) queries Firestore for recipes whose
 `userId` matches the signed-in user's Firebase user ID. From this page, users
 can edit or delete their own recipes. Editing currently uses prompts for the
 recipe fields. Deletion asks for confirmation and also attempts to remove the
 stored recipe image before deleting the Firestore document.
 
 An edit page and recipe-details page are included in the project, but the
-recipe-details page is not yet implemented and the [Your Recipes page] is the
+recipe-details page is not yet implemented and the [Your Recipes page](your-recipes.html) is the
 current entry point for editing a recipe.
 
 ## Tech stack
@@ -76,7 +76,7 @@ current entry point for editing a recipe.
 2. Start a local HTTP server:
 
    ```bash
-   npm run serve
+   npx live-server
    ```
 
    Use `http://localhost:8080` (or the address printed by `live-server`) rather
@@ -92,7 +92,7 @@ current entry point for editing a recipe.
 ## Firebase setup
 
 The browser Firebase project configuration is in
-[js/firebase-config.js](/js/firebase-config.js). Before using accounts or user
+[js/firebase-config.js](js/firebase-config.js). Before using accounts or user
 recipes, configure the matching Firebase project with:
 
 - Email/password Authentication enabled
