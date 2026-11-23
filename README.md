@@ -1,22 +1,69 @@
 # Jungle Cook
 
-A small static restaurant-style recipe landing page built with HTML, CSS, and Sass.
+The Jungle Cook is a responsive recipe website built with HTML, CSS, Sass,
+JavaScript, and Firebase. It provides a public recipe catalog and account-based
+tools for creating and managing your own recipes.
 
-## Project overview
+## How the website works
 
-This project is a front-end mockup for a recipe website called "The Jungle Cook." It includes:
+### Home
 
-- A home page with a hero section and call-to-action styling
-- A login/auth page
-- Responsive layout styles for tablet and mobile screens
-- Sass-based styling with reusable variables and partials
+The [home page](/index.html) introduces the website and contains links to the
+main Browse and Create Recipe pages. The navigation changes for signed-in users:
+"Login" becomes "Logout" and the header shows the user's name or email address.
+
+### Browse recipes
+
+The [Browse page](/browse.html) fetches the sample catalog from
+[data/recipes.json](/data/recipes.json). JavaScript creates a card for every
+recipe and displays its image, description, cooking time, and serving count.
+Loading and image errors are shown with an accessible status message.
+
+### Accounts
+
+The [Login page](/login.html) supports both:
+
+- Signing in with an existing email and password
+- Signing up with a first name, last name, email, and password
+
+Firebase Authentication maintains the signed-in state. After login or signup,
+the user is returned to the home page. The login, signup, and logout controls
+show success or user-friendly error messages for common Firebase errors.
+
+### Create a recipe
+
+The [Create Recipe page](/create-recipe.html) is available to signed-out
+visitors, but its form is disabled until the user logs in. A signed-in user can:
+
+1. Attach one JPG, PNG, or WEBP image (up to 5 MB).
+2. Enter a name, description, total time, and serving size.
+3. Add or remove dynamic ingredient fields.
+4. Add or remove dynamic instruction fields.
+5. Upload the image to Firebase Storage and save the recipe to Firestore.
+
+The browser validates required fields and allowed image types. The page reports
+image-upload and save progress while the recipe is being created.
+
+### Your recipes
+
+The [Your Recipes page](/your-recipes.html) queries Firestore for recipes whose
+`userId` matches the signed-in user's Firebase user ID. From this page, users
+can edit or delete their own recipes. Editing currently uses prompts for the
+recipe fields. Deletion asks for confirmation and also attempts to remove the
+stored recipe image before deleting the Firestore document.
+
+An edit page and recipe-details page are included in the project, but the
+recipe-details page is not yet implemented and the [Your Recipes page] is the
+current entry point for editing a recipe.
 
 ## Tech stack
 
-- HTML
-- CSS
-- Sass
-- JavaScript (for UI behavior)
+- HTML and JavaScript
+- CSS and Sass
+- Firebase Authentication
+- Cloud Firestore
+- Firebase Storage
+- Firebase-compatible ES modules loaded from the Google CDN
 
 ## Getting started
 
@@ -26,52 +73,74 @@ This project is a front-end mockup for a recipe website called "The Jungle Cook.
    npm install
    ```
 
-2. Compile Sass to CSS:
+2. Start a local HTTP server:
+
+   ```bash
+   npm run serve
+   ```
+
+   Use `http://localhost:8080` (or the address printed by `live-server`) rather
+   than opening an HTML file directly. Serving over HTTP allows the JavaScript
+   module imports to load correctly.
+
+3. When editing styles, compile the Sass in another terminal:
 
    ```bash
    npm run compile-sass
    ```
 
-3. Preview the site locally:
+## Firebase setup
 
-   ```bash
-   npx live-server
-   ```
+The browser Firebase project configuration is in
+[js/firebase-config.js](/js/firebase-config.js). Before using accounts or user
+recipes, configure the matching Firebase project with:
 
-   Or open `index.html` directly in a browser.
+- Email/password Authentication enabled
+- A Firestore `recipes` collection
+- Firebase Storage enabled for recipe images
+- Security rules that allow signed-in users to read and write only their own
+  recipe documents and uploaded images
 
-## Useful scripts
+Firestore recipe documents contain the recipe name and description, total time,
+serving size, ingredients, instructions, owner ID/name, image URL, and creation
+timestamp.
 
-```bash
-npm run compile-sass
-```
-
-Watch and rebuild the SCSS files whenever they change.
+The Firebase web configuration is client-facing, not a secret. Access must be
+restricted with Firebase Authentication and database/storage security rules.
 
 ## Project structure
 
 ```text
 jungle-cook/
 ├── index.html
+├── browse.html
+├── create-recipe.html
+├── your-recipes.html
 ├── login.html
-├── app.js
+├── edit-recipe.html
 ├── css/
-│   └── styles.css
 ├── scss/
-│   ├── styles.scss
-│   ├── _variables.scss
-│   ├── _navigation.scss
-│   ├── _home.scss
-│   ├── _login.scss
-│   └── _footer.scss
+├── js/
+│   ├── app.js
+│   ├── firebase-config.js
+│   ├── browse.js
+│   ├── create-recipe.js
+│   └── your-recipes.js
+├── data/
+│   └── recipes.json
+├── images/
 ├── package.json
 └── README.md
 ```
 
-## Notes
+- Sass source files live in `scss/`.
+- `css/styles.css` is generated from `scss/styles.scss`.
+- Page-specific styles and scripts are kept in `css/` and `js/`.
+- The public catalog is loaded from `data/recipes.json`; user-created recipes
+  are loaded from Firestore.
 
-- The Sass source files live in `scss/`.
-- Generated CSS is written to `css/styles.css`.
-- The project is designed as a static front-end site and does not require a backend.
-  web 4
-  https://in-info-web4.luddy.indianapolis.iu.edu/~aadesaki/n315/jungle-cook/index.html
+## Live deployment
+
+The project is currently available at:
+
+https://in-info-web4.luddy.indianapolis.iu.edu/~aadesaki/n315/jungle-cook/index.html
