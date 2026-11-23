@@ -74,4 +74,4 @@ jungle-cook/
 - Generated CSS is written to `css/styles.css`.
 - The project is designed as a static front-end site and does not require a backend.
   web 4
-  https://in-info-web4.luddy.indianapolis.iu.edu/~aadesaki/n315/jungle-cook/
+  https://in-info-web4.luddy.indianapolis.iu.edu/~aadesaki/n315/jungle-cook/index.html
